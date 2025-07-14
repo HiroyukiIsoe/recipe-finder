@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookery - レシピ検索アプリ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cookery</h1>
+            <p>お気に入りのレシピを見つけよう</p>
+            <nav class="navigation">
+                <button id="searchNavBtn" class="nav-btn active">検索</button>
+                <button id="favoritesNavBtn" class="nav-btn">お気に入り</button>
+            </nav>
+        </header>
+
+        <main>
+            <!-- 検索セクション -->
+            <div class="search-section" id="searchSection">
+                <div class="search-form">
+                    <input type="text" id="searchInput" placeholder="食材名や料理名を入力してください...">
+                    <button id="searchBtn">検索</button>
+                </div>
+                
+                <div class="categories-section">
+                    <h3>カテゴリから選ぶ</h3>
+                    <div class="categories-container" id="categoriesContainer">
+                        <!-- カテゴリボタンが動的に追加される -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- お気に入りセクション -->
+            <div class="favorites-section" id="favoritesSection" style="display: none;">
+                <h2>お気に入りレシピ</h2>
+                <div id="favoritesContainer"></div>
+                <div class="no-favorites" id="noFavorites" style="display: none;">
+                    <p>お気に入りのレシピはまだありません。</p>
+                    <p>気になるレシピを見つけてお気に入りに追加してみましょう！</p>
+                </div>
+            </div>
+
+            <div class="loading" id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>検索中...</p>
+            </div>
+
+            <div class="error-message" id="errorMessage" style="display: none;"></div>
+
+            <div class="results-section" id="resultsSection">
+                <div id="resultsContainer"></div>
+            </div>
+        </main>
+
+        <!-- レシピ詳細モーダル -->
+        <div class="modal" id="recipeModal" style="display: none;">
+            <div class="modal-content">
+                <span class="close" id="closeModal">&times;</span>
+                <div id="recipeDetails"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
